@@ -10,6 +10,7 @@ describe('characters routes', () => {
 
   it('should return a list of characters with nested quotes', async () => {
     const res = await request(app).get('/characters');
+    console.log(res.body);
     expect(res.body.length).toEqual(7);
     const moira = res.body.find((char) => char.id === '1');
     expect(moira).toHaveProperty('first_name', 'Moira');

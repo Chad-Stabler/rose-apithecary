@@ -11,7 +11,6 @@ describe('episodes routes', () => {
   it('should return a list of episodes with nested quotes', async () => {
     const res = await request(app).get('/episodes');
     expect(res.body.length).toEqual(6);
-    console.log(res.body);
     const newCar = res.body.find((char) => char.number === 303);
     expect(newCar).toHaveProperty('title', 'New Car');
     expect(newCar).toHaveProperty('season', 3);
